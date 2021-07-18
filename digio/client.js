@@ -8,13 +8,13 @@ let headers = {
     "Authorization": "Basic " + authToken
 };
 
-exports.uploadPdf = async function (file) {
+exports.uploadPdf = async function (file, name, identifier, reason) {
     return await got.post(baseUrl + 'v2/client/document/uploadpdf', {
         json: {
             "signers": [{
-                "identifier": "omprakashsrv@gmail.com",
-                "name": "OMPRAKASH",
-                "reason": "Loan Agreement"
+                "identifier": identifier || "omprakashsrv@gmail.com",
+                "name": name || "OMPRAKASH",
+                "reason": reason || "Loan Agreement"
             }],
             "expire_in_days": 10,
             "display_on_page": "all",
