@@ -25,8 +25,8 @@ logger.debug("Overriding Express logger");
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 const multer = require('multer');
-const upload = multer();
-app.use('/upload', upload.single("file"), uploadRouter);
+let upload = multer();
+app.use('/upload', upload.single('file'), uploadRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
