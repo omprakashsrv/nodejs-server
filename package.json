@@ -1,0 +1,26 @@
+{
+  "name": "projects",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.5",
+    "debug": "~4.3.2",
+    "express": "~4.17.1",
+    "http-errors": "~1.8.0",
+    "http-status": "^1.5.0",
+    "winston": "^3.3.3",
+    "dotenv": "^10.0.0",
+    "cors": "^2.8.5",
+    "winston-daily-rotate-file": "^4.5.5",
+    "morgan": "^1.10.0",
+    "uuid": "^8.3.2",
+    "sequelize": "^6.6.5",
+    "cls-hooked": "^4.2.2",
+    "mysql2": "^2.2.5",
+    "helmet": "^4.6.0",
+    "express-validation": "^3.0.8"
+  }
+}
