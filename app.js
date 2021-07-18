@@ -7,6 +7,7 @@ const logger = require("./utils/logger")('server');
 const error = require("./middlewares/error");
 
 const uploadRouter = require('./routes/upload');
+const downloadRouter = require('./routes/download');
 
 let app = express();
 
@@ -27,6 +28,7 @@ app.use(express.urlencoded({extended: false}));
 const multer = require('multer');
 let upload = multer();
 app.use('/upload', upload.single('file'), uploadRouter);
+app.use('/download', downloadRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
