@@ -6,7 +6,7 @@ const uuid = require('uuid');
 const logger = require("./utils/logger")('server');
 const error = require("./middlewares/error");
 
-const usersRouter = require('./routes/users');
+const uploadRouter = require('./routes/upload');
 
 let app = express();
 
@@ -24,8 +24,9 @@ logger.stream(app);
 logger.debug("Overriding Express logger");
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
-
-app.use('/users', usersRouter);
+const multer = require('multer');
+const upload = multer();
+app.use('/upload', upload.single("file"), uploadRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
