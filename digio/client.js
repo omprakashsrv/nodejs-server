@@ -1,8 +1,8 @@
 const got = require('got');
 
 const baseUrl = "https://ext.digio.in:444/";
-let clientId = process.env.CLIENT_ID || 'AIZ67DUSNZ8TGWJV4DZ7DI3T5Z2LN2W2';
-let clientSecret = process.env.CLIENT_SECRET || 'ASN9AVKHU6HF41KTU71G3KNXLG1ET7BC';
+let clientId = process.env.CLIENT_ID;
+let clientSecret = process.env.CLIENT_SECRET;
 let authToken = Buffer.from(clientId + ":" + clientSecret).toString('base64')
 let headers = {
     "Authorization": "Basic " + authToken
